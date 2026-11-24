@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "neurons": {
+      "type": "http",
+      "url": "https://mcp.neuronsinc.com/mcp"
+    }
+  }
+}

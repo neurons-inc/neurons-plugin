@@ -1,0 +1,14 @@
+{
+  "name": "neurons",
+  "version": "0.14.3",
+  "description": "Neurons predictions in Claude: your analyses through the Neurons MCP, and how to read the results.",
+  "author": {
+    "name": "Neurons Inc.",
+    "email": "support@neuronsinc.com"
+  },
+  "homepage": "https://www.neuronsinc.com",
+  "privacyPolicyUrl": "https://www.neuronsinc.com/legal/privacy-policy",
+  "repository": "https://github.com/neurons-inc/neurons-plugin",
+  "license": "MIT",
+  "keywords": ["neurons", "creative", "attention", "advertising", "mcp"]
+}

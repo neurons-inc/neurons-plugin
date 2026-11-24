@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "neurons",
+  "version": "0.14.3",
+  "description": "Neurons predictions in ChatGPT and Codex: your analyses through the Neurons MCP, and how to read the results.",
+  "author": {
+    "name": "Neurons Inc.",
+    "url": "https://www.neuronsinc.com"
+  },
+  "homepage": "https://www.neuronsinc.com",
+  "repository": "https://github.com/neurons-inc/neurons-plugin",
+  "license": "MIT",
+  "keywords": ["neurons", "creative", "attention", "advertising", "mcp"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Neurons",
+        "shortDescription": "Predict how people see ads",
+        "longDescription": "Analyse ads and other creative with Neurons: where attention goes, cognitive demand, engagement, memory and the Neurons Impact Score. Upload images, read and compare results, check areas of interest, run campaign audits and turn the results into reports, the way the Neurons hub does.",
+        "developerName": "Neurons Inc.",
+        "category": "Data & Analytics",
+        "capabilities": [
+          "Analyse images and videos",
+          "Explain and compare results",
+          "Check areas of interest",
+          "Run campaign audits",
+          "Build reports"
+        ],
+        "websiteURL": "https://www.neuronsinc.com",
+        "supportURL": "https://www.neuronsinc.com/contact",
+        "privacyPolicyURL": "https://www.neuronsinc.com/legal/privacy-policy",
+        "termsOfServiceURL": "https://www.neuronsinc.com/legal/terms-and-conditions",
+        "defaultPrompt": [
+          "Which of my recent Neurons analyses scored best?",
+          "Audit our latest campaign with Neurons"
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      }
+    }
+  }
+}
