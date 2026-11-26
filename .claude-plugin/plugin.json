@@ -1,6 +1,6 @@
 {
   "name": "neurons",
-  "version": "0.17.2",
+  "version": "0.18.0",
   "description": "Neurons predictions in Claude: your analyses through the Neurons MCP, and how to read the results.",
   "author": {
     "name": "Neurons Inc.",

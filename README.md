@@ -34,11 +34,11 @@ sign in with your Neurons account:
 
 ## Uploads and downloads
 
-The plugin has no local helper. To analyse local files (up to 25 at once), Claude runs the one
+The plugin has no local helper. To analyse local files (images, videos and GIF files, up to 25 at once), Claude runs the one
 command `create_upload` returns, so the files go from your machine straight to Neurons, into the `MCP`
 folder of your private workspace in the company you choose. Heatmaps for reports
-are downloaded the same way. This needs a shell (Claude Code, the desktop Code tab or Cowork); in chat,
-start from analyses already in Neurons.
+are downloaded the same way. This needs a shell (Claude Code, the desktop Code tab or Cowork). In chat,
+the in-chat uploader takes images (JPEG, PNG and WebP); videos and GIF files need a shell.
 
 Cowork and claude.ai run those commands in a sandbox that only reaches the domains your organization
 allows (claude.ai **Settings → Capabilities**; an admin sets it on Team and Enterprise). Allow:
