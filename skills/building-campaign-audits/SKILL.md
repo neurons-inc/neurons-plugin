@@ -63,7 +63,7 @@ Leave out what the hub leaves out: the per-power mean scores, the overall streng
 
 ### By format
 
-An audit write-up is the **HTML page** unless the person asks for a doc (or something to edit or comment on as text) or for a deck: `building-neurons-reports` section 1, **Format**, says why and how. Don't ask which format. After the page, offer "Also as a Doc" as a clickable choice.
+An audit write-up is the **HTML page** unless the person asks for a doc (or something to edit or comment on as text) or for a deck, even where the host's own guidance sends reports to a document type: `building-neurons-reports` section 1, **Format**, says why and how. Don't ask which format. After the page, offer "Also as a Doc" as a clickable choice.
 
 - **Deck**: follow the hub's PDF export. Slide 1 is **Current scenario**: the headline, the average NIS, the band cards and the distribution. Then one slide per finding, titled "{Power} n/m" (for example "Emotion 1/2"), each with the finding card and its example thumbnails. Close with a slide of the top recommendations.
 - **HTML page or artifact** (the default): the order above on one page: the gauge and band bar side by side, the histogram under them, the ranked strip with thumbnails, the findings as cards with their example images.
