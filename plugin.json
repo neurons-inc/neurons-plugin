@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "neurons",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "description": "Neurons predictions in ChatGPT and Codex: your analyses through the Neurons MCP, and how to read the results.",
   "author": {
     "name": "Neurons Inc.",
@@ -16,7 +16,7 @@
       "interface": {
         "displayName": "Neurons",
         "shortDescription": "Predict how people see ads",
-        "longDescription": "Analyse ads and other creative with Neurons: where attention goes, cognitive demand, engagement, memory and the Neurons Impact Score. Upload images, read and compare results, check areas of interest, run campaign audits and turn the results into reports, the way the Neurons hub does.",
+        "longDescription": "Analyse ads and other creative with Neurons: where attention goes, cognitive demand, engagement, memory and the Neurons Impact Score. Upload images, read and compare results, check areas of interest, run campaign audits and turn the results into reports, the way the Neurons hub does. You need a Neurons account in a company that has this integration turned on, and you sign in with it.",
         "developerName": "Neurons Inc.",
         "category": "Data & Analytics",
         "capabilities": [
