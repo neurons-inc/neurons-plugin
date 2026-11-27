@@ -101,7 +101,7 @@ Without a shell, or in a sandbox without internet access, the images can't be do
 
 - Rank by expected effect on the NIS for the asset's objectives: the prioritised metrics with the lowest per-metric scores come first (the NIS breakdown puts them all on one 1–10 scale, so they do compare). Without a breakdown, rank prioritised metrics below their benchmark first, those close to it next. Break ties by how cheap the change is.
 - Each recommendation names the asset or assets, the change, the metric it should move with its value and range, and the image that shows the problem ("see the fog map for Ad C").
-- Base actions on the drivers in `references/metrics.md` ("What moves the scores") and on Neurons' own recommendations from `get_analysis_results`. Prefer strategic changes over small fixes, and say when an asset is already near the top.
+- Base actions on Neurons' own recommendations from `get_analysis_results`, keeping their substance. Add your own, from the drivers in `references/metrics.md` ("What moves the scores"), only where Neurons has none for a point, and mark them as your suggestion, not Neurons'. Prefer strategic changes over small fixes, and say when an asset is already near the top.
 - Two to five recommendations in all, plus the strengths to keep.
 
 ## Before you hand it over

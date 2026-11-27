@@ -43,9 +43,11 @@ For a question about one asset, default to the steps below, in the order and dep
 
 1. **What to prioritise**: one or two metrics below their benchmark or guideline that matter most for the objective.
 2. **Evidence**: for each, the asset's value next to that metric's own range or threshold. A compact table works well.
-3. **Two to four concrete creative actions**: specific changes to layout, copy, branding, contrast, pacing or AOIs.
+3. **Two to four concrete creative actions**: Neurons' own recommendations from the result (`get_analysis_results`, `show_image_results`), the ones that matter most, starting with those on prioritised metrics. Keep each one's substance: phrase it for the person and tie it to what is in the asset, but don't swap in fixes of your own.
 
 When a metric is already strong, say so in a line, then move to what to lift and what not to break.
+
+**Neurons' recommendations come first.** Advice of your own (layout, copy, branding, contrast, pacing, AOIs) is only for a point Neurons has no recommendation on, or when the person asks for more; say it is your suggestion, not Neurons'. When Neurons is still writing its recommendations, say they are coming and read them again as the result says, rather than making your own in their place.
 
 ## Questions to try and Neurons knowledge
 
@@ -64,7 +66,7 @@ Search Neurons knowledge with `search_neurons_knowledge` whenever you explain or
 
 **Leave images out of the normal conversation.** Many apps don't display images from tools, and each one costs about 1,500 tokens. Name the asset and work from the results. Use `show_analysis_images` only when the person explicitly asks to see an asset or heatmap.
 
-**Seeing an image's results.** When the person asks to see an image's results or heatmaps in the chat, open `show_image_results` (up to 4 images) in hosts that show MCP apps: the card shows the image on its attention heatmap, with the original and fogmap a click away, its Neurons Impact Score with its band and its four metrics, and puts no image into the conversation. Never open it unasked, and don't repeat its numbers. For a video, use `show_video_results`. Use `show_analysis_images` instead when you need to look at the image yourself, and in hosts without MCP apps.
+**Seeing an image's results.** When an image analysis finishes (after an upload and its setup), or the person asks to see an image's results or heatmaps in the chat, open `show_image_results` (up to 4 images) in hosts that show MCP apps: the card shows the image on its attention heatmap, with the original and fogmap a click away, its Neurons Impact Score with its band and its four metrics, and puts no image into the conversation. Don't repeat its numbers. Its result's text holds what the card doesn't show: the benchmark verdicts for the objectives, Neurons' AI insight and its recommendations by category. Then, in your reply, walk the person through what the results mean for this image and the two or three of Neurons' recommendations that matter most, and offer the rest. For a video, use `show_video_results`. Use `show_analysis_images` instead when you need to look at the image yourself, and in hosts without MCP apps.
 
 **In anything the person will look at outside the chat, always include them:** a report, a page, a slide deck, a canvas or a document. People recognise their ads by sight, and a Neurons result without the asset and its attention map is hard to read.
 
@@ -72,7 +74,7 @@ Build it with the `building-neurons-reports` skill: the report's structure, whic
 
 When the person has asked to see images and `show_analysis_images` returns them, describe what you see in terms of the asset's own elements (the logo, the headline, the product). Read each map's colours the way its caption says: they differ between maps. The images back up the numbers; they never replace them, and you never estimate a score from a heatmap.
 
-Base actions on the drivers Neurons publishes (`references/metrics.md`, "What moves the scores"), not general design advice. Neurons' own recommendation tips favour strategic changes (lighting, a simpler background, a more prominent logo) over small fixes, and say an asset already near the top is hard to push higher.
+Base actions on Neurons' recommendations for the asset; where you add your own, base them on the drivers Neurons publishes (`references/metrics.md`, "What moves the scores"), not general design advice. Neurons' own recommendation tips favour strategic changes (lighting, a simpler background, a more prominent logo) over small fixes, and say an asset already near the top is hard to push higher.
 
 For a fuller read of one asset, the Insights page in Neurons groups results into topics you can follow: First Glance (Start Attention), Lasting Impression (End Attention), Attention Distribution, Visibility of the brand, product, headline, CTA and body text, Visual Engagement, Visual Complexity and Memorability.
 
