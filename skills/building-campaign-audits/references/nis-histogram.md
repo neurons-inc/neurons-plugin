@@ -20,7 +20,7 @@ The hub's four NIS bands, in the hub's own NIS colours, which the in-chat cards 
 | Strong | 5 to under 7 | Score 5 – 6.9 | green `#04bf85` | `#04bf85` |
 | Outstanding | 7 to 10 | Score 7 – 10 | dark green `#166534` | `#1b7e41` |
 
-Text on a band colour (a band badge, a count inside a bar) is `#000000` on Minimal, `#1a1a1a` on Moderate and Strong, and `#ffffff` on Outstanding, so it meets WCAG AA. Never use white on the three lighter bands.
+Text on a band colour (a band badge, a count inside a bar) is white, `#ffffff`, on every band, as the hub's Synapse badges have it. White misses WCAG AA on Minimal, Moderate and Strong; the design team chose it for consistency with the hub, to revisit in Synapse, so keep band text short and bold.
 
 - Label the bins with their ranges and the bands with their names, not only colours, so the chart reads without colour too.
 - Show the band counts and shares above the chart (the gauge and band bar, visuals 1 and 2 in `building-neurons-reports` `references/report-visuals.md`), each as the tool gives them.

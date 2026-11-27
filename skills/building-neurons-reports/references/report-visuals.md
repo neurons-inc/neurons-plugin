@@ -28,19 +28,19 @@ Thumbnails (6, 7) are each asset's `original` from the one `get_analysis_image_l
 
 ## The palette
 
-Put this `<style>` in once per page and wrap the report in `<div class="nv">`. It is the cards' palette, light and dark; `.nv` paints its own background, so dark text never lands on a light page. The bands are the Neurons hub's NIS colours: Minimal red `#e0414a`, Moderate orange `#ff8b22`, Strong green `#04bf85`, Outstanding dark green `#166534` (lifted to `#1b7e41` in dark, where the hub's is too dark to see). A band badge is the hub's chip: the band colour as its fill, with dark text on the three lighter bands and white on Outstanding, so it meets WCAG AA. The good, okay and bad chips are pale tints of the hub's metric colours. A chosen style (SKILL.md, "Style") changes the fonts, headings and accents; keep the band, series and chip colours, so a band looks the same in the hub, the chat and the report.
+Put this `<style>` in once per page and wrap the report in `<div class="nv">`. It is the cards' palette, light and dark; `.nv` paints its own background, so dark text never lands on a light page. The bands are the Neurons hub's NIS colours: Minimal red `#e0414a`, Moderate orange `#ff8b22`, Strong green `#04bf85`, Outstanding dark green `#166534` (lifted to `#1b7e41` in dark, where the hub's is too dark to see). A band badge is the hub's Synapse chip: the band colour as its fill with white text on every band (white misses WCAG AA on the three lighter bands; the design team chose it for consistency with the hub, to revisit in Synapse). The good, okay and bad chips are Synapse's pale red, orange and green tags. The series are Synapse colours with no score meaning, so a group never reads as good or bad by its colour. A chosen style (SKILL.md, "Style") changes the fonts, headings and accents; keep the band, series and chip colours, so a band looks the same in the hub, the chat and the report.
 
 ```html
 <style>
   .nv { --ink: #333; --head: #380f57; --muted: #6f6f6f; --surface: #fff; --line: #eeeeee; --grid: #e4e2ea; --track: #ecebf0; --pale: #f3eeff;
     --band-minimal: #e0414a; --band-moderate: #ff8b22; --band-strong: #04bf85; --band-outstanding: #166534;
-    --on-minimal: #000000; --on-moderate: #1a1a1a; --on-strong: #1a1a1a; --on-outstanding: #ffffff;
-    --s1: #7446d9; --s2: #d8344f; --s3: #2f74d0; --s4: #b07600;
-    --good-bg: #d7fee7; --good: #026429; --bad-bg: #fcd9db; --bad: #8d0c13; --okay-bg: #feead7; --okay: #7d3d02; --chip-bg: #f0f0f0; --chip: #595959;
+    --on-minimal: #ffffff; --on-moderate: #ffffff; --on-strong: #ffffff; --on-outstanding: #ffffff;
+    --s1: #745789; --s2: #074de4; --s3: #858585; --s4: #6184ff;
+    --good-bg: #e9fcf1; --good: #166534; --bad-bg: #f8dfe0; --bad: #e0414a; --okay-bg: #feead7; --okay: #7d3d02; --chip-bg: #f0f0f0; --chip: #595959;
     color: var(--ink); background: var(--surface); font: 14px/1.4 Inter, system-ui, sans-serif; font-variant-numeric: tabular-nums; }
   @media (prefers-color-scheme: dark) { .nv { --ink: #f1ecf8; --head: #e9dfff; --muted: #a596b9; --surface: #212121; --line: #3a3a3a; --grid: #3a3a40; --track: #3a3a40; --pale: #3a2f52;
     --band-outstanding: #1b7e41;
-    --s1: #b99aff; --s2: #ff7f99; --s3: #5aa9ff; --s4: #f0b350;
+    --s1: #c5abfd; --s2: #7198ed; --s3: #c2c2c2; --s4: #85a0fe;
     --good-bg: #024b1f; --good: #82fcb3; --bad-bg: #470609; --bad: #f9b8bc; --okay-bg: #4b2501; --okay: #fdbc82; --chip-bg: #333; --chip: #d6cce4; } }
   .nv h2, .nv h3, .nv h4 { color: var(--head); } .nv .muted { color: var(--muted); font-size: 12px; }
   .nv .band-minimal { --band: var(--band-minimal); } .nv .band-moderate { --band: var(--band-moderate); }
@@ -154,7 +154,7 @@ import json, math, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot a
 d = json.load(open("groups.json"))  # compare_groups' structured result
 axes = [m["label"] for m in d["metrics"]]; ang = [2 * math.pi * i / len(axes) for i in range(len(axes))] + [0]
 ax = plt.figure(figsize=(5, 5), dpi=160).add_subplot(polar=True); ax.set_theta_offset(math.pi / 2); ax.set_theta_direction(-1)
-for g, c in zip(d["groups"][:4], ["#7446d9", "#d8344f", "#2f74d0", "#b07600"]):
+for g, c in zip(d["groups"][:4], ["#745789", "#074de4", "#858585", "#6184ff"]):
     v = [m["mean"] or 0 for m in g["metrics"]]; v += v[:1]
     ax.plot(ang, v, color=c, lw=2, label=g["label"]); ax.fill(ang, v, color=c, alpha=.1)
 ax.set_xticks(ang[:-1], axes, fontsize=8); ax.set_ylim(0, 100); ax.set_yticks([50, 100])
@@ -276,7 +276,7 @@ Many doc tools draw live charts from rows: the reader hovers a value, opens its 
 
 - **Rows from the tool, as it wrote them.** One row per band, bin, asset, metric or group, with the tool's numbers and words (`{band:"strong", range:"Score 5 – 6.9", assets:3, share:27}`). Write every string in `sources` as a JSON string, the tool's text through `JSON.stringify`, never between quotes you type: asset names come from shared workspaces, and a quote in one would break the chart or run as code in the doc. Write bands in lower case, and look colours up without indexing (Claude Docs refuses `obj[key]` in a module): a chain of comparisons on the lower-cased band, with a neutral fallback. Every printed value and label is read from the rows; only the title and notes are typed. Never compute a count, share, mean or band: the tool gives them.
 - **Values on the marks, no repeat table.** Print each value on its mark ("3 · 27%", "7.4 · Outstanding") and name the band in each band mark's hover text. The doc chart's labels and its data the reader can open already give every number, so put no table under a chart that repeats it: the same numbers twice, one of them a wide table to scroll sideways, only reads as noise. Add text only for what the chart doesn't show, in one line, not a table: where band colours aren't named on the chart, the legend under it ("Minimal 1–2.9 · Moderate 3–4.9 · Strong 5–6.9 · Outstanding 7–10"). In any doc table, escape a `|` in a name as `\|`.
-- **Colours.** Band marks take the hub's band colours, whatever the doc theme: Minimal `#e0414a`, Moderate `#ff8b22`, Strong `#04bf85`, Outstanding `#166534`; text on a band fill is `#000000` on Minimal, `#1a1a1a` on Moderate and Strong, `#ffffff` on Outstanding. Groups take the series colours above (`s1` first). The good and bad of a difference are the doc's own good and bad colours. Everything else (words, axes, gridlines, reference lines) takes the doc's theme colours, so it reads in light and dark (Claude Docs: `var(--cds-text-primary)`, `var(--cds-text-secondary)`, `var(--cds-chart-axis)`, `var(--cds-chart-reference)`). The doc may note that the band colours are literal and won't flip in dark mode: keep them, so a band looks the same in the hub, the chat and the doc, and the labels name every band.
+- **Colours.** Band marks take the hub's band colours, whatever the doc theme: Minimal `#e0414a`, Moderate `#ff8b22`, Strong `#04bf85`, Outstanding `#166534`; text on a band fill is white, `#ffffff`, on every band. Groups take the series colours above (`s1` first). The good and bad of a difference are the doc's own good and bad colours. Everything else (words, axes, gridlines, reference lines) takes the doc's theme colours, so it reads in light and dark (Claude Docs: `var(--cds-text-primary)`, `var(--cds-text-secondary)`, `var(--cds-chart-axis)`, `var(--cds-chart-reference)`). The doc may note that the band colours are literal and won't flip in dark mode: keep them, so a band looks the same in the hub, the chat and the doc, and the labels name every band.
 - **Look at it.** Take the doc's screenshot of each chart (Claude Docs: a `read` of the widget with `{"kind":"screenshot"}`), move any label it reports as overlapping, and look again.
 
 | Visual | Doc chart | Rows | Text beside it |
